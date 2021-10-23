@@ -2,17 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://chenxue3.GitHub.io/post/blog/</loc>
-    <lastmod>2021-10-09T16:26:31+08:00</lastmod>
+    <loc>https://chenxue3.github.io/categories/</loc>
   </url><url>
-    <loc>https://chenxue3.GitHub.io/</loc>
-    <lastmod>2021-10-09T16:26:31+08:00</lastmod>
+    <loc>https://chenxue3.github.io/</loc>
   </url><url>
-    <loc>https://chenxue3.GitHub.io/post/</loc>
-    <lastmod>2021-10-09T16:26:31+08:00</lastmod>
-  </url><url>
-    <loc>https://chenxue3.GitHub.io/categories/</loc>
-  </url><url>
-    <loc>https://chenxue3.GitHub.io/tags/</loc>
+    <loc>https://chenxue3.github.io/tags/</loc>
   </url>
 </urlset>
