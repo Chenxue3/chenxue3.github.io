@@ -2,9 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Xueshan Chen</title>
-    <link>https://chenxue3.github.io/tags/</link>
+    <link>https://chenxue3.github.io/tag/</link>
     <description>Recent content in Tags on Xueshan Chen</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://chenxue3.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Oct 2021 09:33:00 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/tag/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
