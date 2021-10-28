@@ -6,7 +6,72 @@
         <description>Recent content on Xueshan Chen</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 27 Oct 2021 09:33:08 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 28 Oct 2021 21:58:36 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Two Sum</title>
+        <link>https://chenxue3.github.io/post/removeelement/</link>
+        <pubDate>Thu, 28 Oct 2021 21:58:36 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/removeelement/</guid>
+        <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://leetcode.com/problems/two-sum/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;leetcode link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;note&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;time complexity should less than $O(n^2)$&lt;/li&gt;
+&lt;li&gt;only one valid answer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;my-solution-in-python&#34;&gt;my solution in python&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Solution&lt;/span&gt;(object):
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;twoSum&lt;/span&gt;(self, nums, target):
+        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        :type nums: List[int]
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        :type target: int
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        :rtype: List[int]
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;        &amp;#34;&amp;#34;&amp;#34;&lt;/span&gt;
+        n &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i,m &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; enumerate(nums):
+            n &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; target &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; m
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; j,v &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; enumerate(nums):
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (n &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; v):
+                    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; [i,j]
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;the &lt;code&gt;enumerate()&lt;/code&gt; function is used to get the index and the value at one time from an array&lt;/li&gt;
+&lt;li&gt;the time complexity is $O(n^2)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;better-solution-from-other&#34;&gt;Better solution from other&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;twoSum&lt;/span&gt;(self, nums, target):
+        d &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {}
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i, n &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; enumerate(nums):
+            m &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; target &lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt; n
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; m &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; d:
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; [d[m], i]
+            &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+                d[n] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; i
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;the time complexity is only $O(n)$&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Add Tags for Hugo Articles</title>
+        <link>https://chenxue3.github.io/post/hugoaddtags/</link>
+        <pubDate>Wed, 27 Oct 2021 10:25:39 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/hugoaddtags/</guid>
+        <description>&lt;h2 id=&#34;configtoml&#34;&gt;config.toml&lt;/h2&gt;
+&lt;p&gt;add below statements into &lt;code&gt;config.toml&lt;/code&gt; file&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;tag&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;tags&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;category&lt;/span&gt; = &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;categories&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;blog&#34;&gt;Blog&lt;/h2&gt;
+&lt;p&gt;add tags into the header of the &lt;code&gt;md&lt;/code&gt; file&lt;/p&gt;
+&lt;p&gt;for example, this article, the header is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Add Tags for Hugo Articles&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;date&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;2021-10-27T10:25:39&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;+08&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;00&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;draft&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;tags&lt;/span&gt;: [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hugo&amp;#34;&lt;/span&gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>Binary Search</title>
         <link>https://chenxue3.github.io/post/array/</link>
         <pubDate>Sun, 24 Oct 2021 15:02:47 +0800</pubDate>

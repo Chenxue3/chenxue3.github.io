@@ -6,7 +6,30 @@
     <description>Recent content in Posts on Xueshan Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Oct 2021 15:02:47 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Oct 2021 21:58:36 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Two Sum</title>
+      <link>https://chenxue3.github.io/post/removeelement/</link>
+      <pubDate>Thu, 28 Oct 2021 21:58:36 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/removeelement/</guid>
+      <description>leetcode link
+note
+ time complexity should less than $O(n^2)$ only one valid answer  my solution in python class Solution(object): def twoSum(self, nums, target): &amp;#34;&amp;#34;&amp;#34; :type nums: List[int] :type target: int :rtype: List[int] &amp;#34;&amp;#34;&amp;#34; n = 0; for i,m in enumerate(nums): n = target - m for j,v in enumerate(nums): if (n == v): return [i,j] return  the enumerate() function is used to get the index and the value at one time from an array the time complexity is $O(n^2)$  Better solution from other def twoSum(self, nums, target): d = {} for i, n in enumerate(nums): m = target - n if m in d: return [d[m], i] else: d[n] = i  the time complexity is only $O(n)$  </description>
+    </item>
+    
+    <item>
+      <title>Add Tags for Hugo Articles</title>
+      <link>https://chenxue3.github.io/post/hugoaddtags/</link>
+      <pubDate>Wed, 27 Oct 2021 10:25:39 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/hugoaddtags/</guid>
+      <description>config.toml add below statements into config.toml file
+tag = &amp;#34;tags&amp;#34; category = &amp;#34;categories&amp;#34; Blog add tags into the header of the md file
+for example, this article, the header is:
+title: &amp;#34;Add Tags for Hugo Articles&amp;#34; date: 2021-10-27T10:25:39+08:00 draft: true tags: [&amp;#34;hugo&amp;#34;] </description>
+    </item>
+    
     <item>
       <title>Binary Search</title>
       <link>https://chenxue3.github.io/post/array/</link>
