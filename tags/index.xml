@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Xueshan Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Oct 2021 21:58:36 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Nov 2021 08:50:12 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Structure and Algorithms</title>
+      <link>https://chenxue3.github.io/tags/data-structure-and-algorithms/</link>
+      <pubDate>Thu, 04 Nov 2021 08:50:12 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/tags/data-structure-and-algorithms/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>LeetCode</title>
       <link>https://chenxue3.github.io/tags/leetcode/</link>
@@ -22,15 +31,6 @@
       <pubDate>Wed, 27 Oct 2021 10:25:39 +0800</pubDate>
       
       <guid>https://chenxue3.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Structure and Algorithms</title>
-      <link>https://chenxue3.github.io/tags/data-structure-and-algorithms/</link>
-      <pubDate>Sun, 24 Oct 2021 15:02:47 +0800</pubDate>
-      
-      <guid>https://chenxue3.github.io/tags/data-structure-and-algorithms/</guid>
       <description></description>
     </item>
     
