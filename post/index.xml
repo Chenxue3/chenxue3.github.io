@@ -6,27 +6,49 @@
     <description>Recent content in Posts on Xueshan Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Nov 2021 08:50:12 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jan 2022 11:08:27 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Remove Element</title>
-      <link>https://chenxue3.github.io/post/removeelement/</link>
-      <pubDate>Thu, 04 Nov 2021 08:50:12 +0800</pubDate>
+      <title>Set up an Electron Project with VUE</title>
+      <link>https://chenxue3.github.io/post/vue_electron_setup/</link>
+      <pubDate>Tue, 04 Jan 2022 11:08:27 +0800</pubDate>
       
-      <guid>https://chenxue3.github.io/post/removeelement/</guid>
-      <description>Problem leetcode
-Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
-Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result.</description>
+      <guid>https://chenxue3.github.io/post/vue_electron_setup/</guid>
+      <description>Download Resources   Node.js
+Node.js download
+using
+node -v npm -v to check.
+  Vue
+initial Vue by using the command:
+npm install -g @vue/cli # OR yarn global add @vue/cli using
+vue --version to check
+  Create a new Vue project  create  vue create [vue-electorn-demo-name]  run the project  npm run serve Add electron Using vue-cli-plugin-electron-builder
+vue add electron-builder Run Project in Electron npm run eletron:serve the project will look like:</description>
     </item>
     
     <item>
-      <title>Two Sum</title>
-      <link>https://chenxue3.github.io/post/twosum/</link>
-      <pubDate>Thu, 28 Oct 2021 21:58:36 +0800</pubDate>
+      <title>Hugo Common Commands</title>
+      <link>https://chenxue3.github.io/post/hugocmd/</link>
+      <pubDate>Tue, 04 Jan 2022 11:07:35 +0800</pubDate>
       
-      <guid>https://chenxue3.github.io/post/twosum/</guid>
-      <description>leetcode link
-note
- time complexity should less than $O(n^2)$ only one valid answer  my solution in python class Solution(object): def twoSum(self, nums, target): &amp;#34;&amp;#34;&amp;#34; :type nums: List[int] :type target: int :rtype: List[int] &amp;#34;&amp;#34;&amp;#34; n = 0; for i,m in enumerate(nums): n = target - m for j,v in enumerate(nums): if (n == v): return [i,j] return  the enumerate() function is used to get the index and the value at one time from an array the time complexity is $O(n^2)$  Better solution from other def twoSum(self, nums, target): d = {} for i, n in enumerate(nums): m = target - n if m in d: return [d[m], i] else: d[n] = i  the time complexity is only $O(n)$  </description>
+      <guid>https://chenxue3.github.io/post/hugocmd/</guid>
+      <description>Create   create a new site
+hugo new site [siteName]   Add Blogs   create a new blog
+hugo new [path/blogName.md] the new blog will locate in the siteName/content/path, and default with a header
+  Build   open the site in local
+hugo serve   view the draft
+hugo -D serve   view the draft with a theme
+hugo -D serve --theme=[themeName]   view with a base URL</description>
+    </item>
+    
+    <item>
+      <title>No Response After Executing `vue iu`</title>
+      <link>https://chenxue3.github.io/post/vuenoresponse/</link>
+      <pubDate>Tue, 09 Nov 2021 19:07:00 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/vuenoresponse/</guid>
+      <description>Problems When I was learning VUE, and I want to create a new VUE project after install VUE and npm.
+However, when I type in vue uithen enter, it shows noting.
+Solution using a command cnpm i -g @vue/cli , run it, then execute vue uiagain, then it works.</description>
     </item>
     
     <item>
@@ -37,18 +59,8 @@ note
       <guid>https://chenxue3.github.io/post/hugoaddtags/</guid>
       <description>config.toml add below statements into config.toml file
 tag = &amp;#34;tags&amp;#34; category = &amp;#34;categories&amp;#34; Blog add tags into the header of the md file
-for example, this article, the header is:
+for example, in this article, the header is:
 title: &amp;#34;Add Tags for Hugo Articles&amp;#34; date: 2021-10-27T10:25:39+08:00 draft: true tags: [&amp;#34;hugo&amp;#34;] </description>
-    </item>
-    
-    <item>
-      <title>Binary Search</title>
-      <link>https://chenxue3.github.io/post/binarysearch/</link>
-      <pubDate>Sun, 24 Oct 2021 15:02:47 +0800</pubDate>
-      
-      <guid>https://chenxue3.github.io/post/binarysearch/</guid>
-      <description>Base Definitions of Array  elements in an array can&amp;rsquo;t be deleted, just can be rewrite in different program language, the memory management is different  in java, the memory location is not continuing in C++, it is continuing    Binary Search   Leetcode link
-  Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums.</description>
     </item>
     
     <item>
@@ -57,9 +69,9 @@ title: &amp;#34;Add Tags for Hugo Articles&amp;#34; date: 2021-10-27T10:25:39+08
       <pubDate>Sat, 23 Oct 2021 18:09:50 +0800</pubDate>
       
       <guid>https://chenxue3.github.io/post/public_folder/</guid>
-      <description>Issue When I want to put my public folder to a LAN, the html and hyper links are showed, but the subpages and the CSS (the theme) did not appear.
-This web can work well with the git page and the local host.
-Solution   First, I commented the baseURL in the config.toml, but it cannot work
+      <description>Issue When I want to put my public folder to a LAN, the HTML and hyperlinks are showed, but the subpages and the CSS (the theme) did not appear.
+This web can work well with the git page and the localhost.
+Solution   First, I commented on the baseURL in the config.toml, but it cannot work
   Final
 add
 baseUrl = &amp;#34;//example.org&amp;#34; relativeURLs = true uglyURLs = true into the config.</description>

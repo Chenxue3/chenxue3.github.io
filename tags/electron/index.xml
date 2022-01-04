@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>electron on Xueshan Chen</title>
+    <link>https://chenxue3.github.io/tags/electron/</link>
+    <description>Recent content in electron on Xueshan Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Jan 2022 11:08:27 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Set up an Electron Project with VUE</title>
+      <link>https://chenxue3.github.io/post/vue_electron_setup/</link>
+      <pubDate>Tue, 04 Jan 2022 11:08:27 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/vue_electron_setup/</guid>
+      <description>Download Resources   Node.js
+Node.js download
+using
+node -v npm -v to check.
+  Vue
+initial Vue by using the command:
+npm install -g @vue/cli # OR yarn global add @vue/cli using
+vue --version to check
+  Create a new Vue project  create  vue create [vue-electorn-demo-name]  run the project  npm run serve Add electron Using vue-cli-plugin-electron-builder
+vue add electron-builder Run Project in Electron npm run eletron:serve the project will look like:</description>
+    </item>
+    
+  </channel>
+</rss>

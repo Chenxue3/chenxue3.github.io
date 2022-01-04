@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vue on Xueshan Chen</title>
+    <link>https://chenxue3.github.io/tags/vue/</link>
+    <description>Recent content in vue on Xueshan Chen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Jan 2022 11:08:27 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Set up an Electron Project with VUE</title>
+      <link>https://chenxue3.github.io/post/vue_electron_setup/</link>
+      <pubDate>Tue, 04 Jan 2022 11:08:27 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/vue_electron_setup/</guid>
+      <description>Download Resources   Node.js
+Node.js download
+using
+node -v npm -v to check.
+  Vue
+initial Vue by using the command:
+npm install -g @vue/cli # OR yarn global add @vue/cli using
+vue --version to check
+  Create a new Vue project  create  vue create [vue-electorn-demo-name]  run the project  npm run serve Add electron Using vue-cli-plugin-electron-builder
+vue add electron-builder Run Project in Electron npm run eletron:serve the project will look like:</description>
+    </item>
+    
+    <item>
+      <title>No Response After Executing `vue iu`</title>
+      <link>https://chenxue3.github.io/post/vuenoresponse/</link>
+      <pubDate>Tue, 09 Nov 2021 19:07:00 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/vuenoresponse/</guid>
+      <description>Problems When I was learning VUE, and I want to create a new VUE project after install VUE and npm.
+However, when I type in vue uithen enter, it shows noting.
+Solution using a command cnpm i -g @vue/cli , run it, then execute vue uiagain, then it works.</description>
+    </item>
+    
+  </channel>
+</rss>

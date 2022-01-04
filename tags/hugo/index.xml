@@ -6,7 +6,22 @@
     <description>Recent content in hugo on Xueshan Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Oct 2021 10:25:39 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Jan 2022 11:07:35 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Common Commands</title>
+      <link>https://chenxue3.github.io/post/hugocmd/</link>
+      <pubDate>Tue, 04 Jan 2022 11:07:35 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/hugocmd/</guid>
+      <description>Create   create a new site
+hugo new site [siteName]   Add Blogs   create a new blog
+hugo new [path/blogName.md] the new blog will locate in the siteName/content/path, and default with a header
+  Build   open the site in local
+hugo serve   view the draft
+hugo -D serve   view the draft with a theme
+hugo -D serve --theme=[themeName]   view with a base URL</description>
+    </item>
+    
     <item>
       <title>Add Tags for Hugo Articles</title>
       <link>https://chenxue3.github.io/post/hugoaddtags/</link>
@@ -15,7 +30,7 @@
       <guid>https://chenxue3.github.io/post/hugoaddtags/</guid>
       <description>config.toml add below statements into config.toml file
 tag = &amp;#34;tags&amp;#34; category = &amp;#34;categories&amp;#34; Blog add tags into the header of the md file
-for example, this article, the header is:
+for example, in this article, the header is:
 title: &amp;#34;Add Tags for Hugo Articles&amp;#34; date: 2021-10-27T10:25:39+08:00 draft: true tags: [&amp;#34;hugo&amp;#34;] </description>
     </item>
     
@@ -25,9 +40,9 @@ title: &amp;#34;Add Tags for Hugo Articles&amp;#34; date: 2021-10-27T10:25:39+08
       <pubDate>Sat, 23 Oct 2021 18:09:50 +0800</pubDate>
       
       <guid>https://chenxue3.github.io/post/public_folder/</guid>
-      <description>Issue When I want to put my public folder to a LAN, the html and hyper links are showed, but the subpages and the CSS (the theme) did not appear.
-This web can work well with the git page and the local host.
-Solution   First, I commented the baseURL in the config.toml, but it cannot work
+      <description>Issue When I want to put my public folder to a LAN, the HTML and hyperlinks are showed, but the subpages and the CSS (the theme) did not appear.
+This web can work well with the git page and the localhost.
+Solution   First, I commented on the baseURL in the config.toml, but it cannot work
   Final
 add
 baseUrl = &amp;#34;//example.org&amp;#34; relativeURLs = true uglyURLs = true into the config.</description>
