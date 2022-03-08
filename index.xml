@@ -6,7 +6,86 @@
         <description>Recent content on Xueshan Chen</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 04 Jan 2022 11:08:27 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 06 Mar 2022 15:05:51 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Scrol Back to Top</title>
+        <link>https://chenxue3.github.io/post/scrol-back-to-top/</link>
+        <pubDate>Sun, 06 Mar 2022 15:05:51 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/scrol-back-to-top/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vue with Animate.css set up</title>
+        <link>https://chenxue3.github.io/post/vue-animate-css/</link>
+        <pubDate>Sun, 06 Mar 2022 14:09:02 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/vue-animate-css/</guid>
+        <description>&lt;h2 id=&#34;using-animatecss-in-vue-projects&#34;&gt;Using Animate.css in Vue projects&lt;/h2&gt;
+&lt;h4 id=&#34;useful-links&#34;&gt;Useful links:&lt;/h4&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.dowebok.com/demo/2014/98/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;animate.css&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;process&#34;&gt;Process&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;install animate.css using npm&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-command&#34; data-lang=&#34;command&#34;&gt;npm install animate.css --save
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;if successful, you may see:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt; &amp;quot;animate.css&amp;quot;: &amp;quot;^4.1.1&amp;quot;,&lt;/code&gt; in the &lt;code&gt;package.json&lt;/code&gt;&amp;raquo; &lt;code&gt;&amp;quot;dependencies&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;note: may it is not version 4.1.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;using animate in the Vue project&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;in &lt;code&gt;main.js&lt;/code&gt;,
+&lt;ul&gt;
+&lt;li&gt;import it using &lt;code&gt;import animated from &#39;animate.css&#39;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;using it by &lt;code&gt;Vue.use(animated)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;then you can use it&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;animate__animated animate__fadeInDown&amp;#34;&lt;/span&gt; &amp;gt; &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;note: you have to add class &lt;code&gt;animate__animated &lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;note: then you need to add class &lt;code&gt;animate__X &lt;/code&gt;, where X is based on the feature you want, reference to &lt;a class=&#34;link&#34; href=&#34;https://www.dowebok.com/demo/2014/98/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;this link&lt;/a&gt;, you can view different demo of animations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Vue Axios Async Problem</title>
+        <link>https://chenxue3.github.io/post/vue-axios-async-problem/</link>
+        <pubDate>Sat, 05 Mar 2022 16:06:30 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/vue-axios-async-problem/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Element Ui Submenu Fix Open All</title>
+        <link>https://chenxue3.github.io/post/element-ui-submenu-fix-open-all/</link>
+        <pubDate>Sat, 05 Mar 2022 14:03:11 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/element-ui-submenu-fix-open-all/</guid>
+        <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+</description>
+        </item>
+        <item>
+        <title>如果文字过长，点击显示更多文字，再次点击收起</title>
+        <link>https://chenxue3.github.io/post/extendtextarea/</link>
+        <pubDate>Sun, 20 Feb 2022 17:47:36 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/extendtextarea/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Set up an Electron Project with VUE</title>
         <link>https://chenxue3.github.io/post/vue_electron_setup/</link>
         <pubDate>Tue, 04 Jan 2022 11:08:27 +0800</pubDate>

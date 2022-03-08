@@ -6,7 +6,57 @@
     <description>Recent content in Posts on Xueshan Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Jan 2022 11:08:27 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Mar 2022 15:05:51 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scrol Back to Top</title>
+      <link>https://chenxue3.github.io/post/scrol-back-to-top/</link>
+      <pubDate>Sun, 06 Mar 2022 15:05:51 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/scrol-back-to-top/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue with Animate.css set up</title>
+      <link>https://chenxue3.github.io/post/vue-animate-css/</link>
+      <pubDate>Sun, 06 Mar 2022 14:09:02 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/vue-animate-css/</guid>
+      <description>Using Animate.css in Vue projects Useful links: animate.css
+Process   install animate.css using npm
+npm install animate.css --save   if successful, you may see:
+ &amp;quot;animate.css&amp;quot;: &amp;quot;^4.1.1&amp;quot;, in the package.json&amp;raquo; &amp;quot;dependencies&amp;quot;
+ note: may it is not version 4.1.1    using animate in the Vue project
+ in main.js,  import it using import animated from &#39;animate.css&#39; using it by Vue.use(animated)      then you can use it</description>
+    </item>
+    
+    <item>
+      <title>Vue Axios Async Problem</title>
+      <link>https://chenxue3.github.io/post/vue-axios-async-problem/</link>
+      <pubDate>Sat, 05 Mar 2022 16:06:30 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/vue-axios-async-problem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Element Ui Submenu Fix Open All</title>
+      <link>https://chenxue3.github.io/post/element-ui-submenu-fix-open-all/</link>
+      <pubDate>Sat, 05 Mar 2022 14:03:11 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/element-ui-submenu-fix-open-all/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>如果文字过长，点击显示更多文字，再次点击收起</title>
+      <link>https://chenxue3.github.io/post/extendtextarea/</link>
+      <pubDate>Sun, 20 Feb 2022 17:47:36 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/extendtextarea/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Set up an Electron Project with VUE</title>
       <link>https://chenxue3.github.io/post/vue_electron_setup/</link>

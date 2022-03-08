@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Create   create a new site
-hugo new site [siteName]   Add Blogs   create a new blog
-hugo new [path/blogName.md] the new blog will locate in the siteName/content/path, and default with a header
-  Build   open the site in local
-hugo serve   view the draft
-hugo -D serve   view the draft with a theme
-hugo -D serve --theme=[themeName]   view with a base URL'><title>Hugo Common Commands</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Using Animate.css in Vue projects Useful links: animate.css
+Process   install animate.css using npm
+npm install animate.css --save   if successful, you may see:
+ &amp;quot;animate.css&amp;quot;: &amp;quot;^4.1.1&amp;quot;, in the package.json&amp;raquo; &amp;quot;dependencies&amp;quot;
+ note: may it is not version 4.1.1    using animate in the Vue project
+ in main.js,  import it using import animated from &#39;animate.css&#39; using it by Vue.use(animated)      then you can use it'><title>Vue with Animate.css set up</title>
 
-<link rel='canonical' href='https://chenxue3.github.io/post/hugocmd/'>
+<link rel='canonical' href='https://chenxue3.github.io/post/vue-animate-css/'>
 
-<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Hugo Common Commands'>
-<meta property='og:description' content='Create   create a new site
-hugo new site [siteName]   Add Blogs   create a new blog
-hugo new [path/blogName.md] the new blog will locate in the siteName/content/path, and default with a header
-  Build   open the site in local
-hugo serve   view the draft
-hugo -D serve   view the draft with a theme
-hugo -D serve --theme=[themeName]   view with a base URL'>
-<meta property='og:url' content='https://chenxue3.github.io/post/hugocmd/'>
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Vue with Animate.css set up'>
+<meta property='og:description' content='Using Animate.css in Vue projects Useful links: animate.css
+Process   install animate.css using npm
+npm install animate.css --save   if successful, you may see:
+ &amp;quot;animate.css&amp;quot;: &amp;quot;^4.1.1&amp;quot;, in the package.json&amp;raquo; &amp;quot;dependencies&amp;quot;
+ note: may it is not version 4.1.1    using animate in the Vue project
+ in main.js,  import it using import animated from &#39;animate.css&#39; using it by Vue.use(animated)      then you can use it'>
+<meta property='og:url' content='https://chenxue3.github.io/post/vue-animate-css/'>
 <meta property='og:site_name' content='Xueshan Chen'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hugo' /><meta property='article:published_time' content='2022-01-04T11:07:35&#43;08:00'/><meta property='article:modified_time' content='2022-01-04T11:07:35&#43;08:00'/>
-<meta name="twitter:title" content="Hugo Common Commands">
-<meta name="twitter:description" content="Create   create a new site
-hugo new site [siteName]   Add Blogs   create a new blog
-hugo new [path/blogName.md] the new blog will locate in the siteName/content/path, and default with a header
-  Build   open the site in local
-hugo serve   view the draft
-hugo -D serve   view the draft with a theme
-hugo -D serve --theme=[themeName]   view with a base URL">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='vue' /><meta property='article:tag' content='CSS' /><meta property='article:published_time' content='2022-03-06T14:09:02&#43;08:00'/><meta property='article:modified_time' content='2022-03-06T14:09:02&#43;08:00'/>
+<meta name="twitter:title" content="Vue with Animate.css set up">
+<meta name="twitter:description" content="Using Animate.css in Vue projects Useful links: animate.css
+Process   install animate.css using npm
+npm install animate.css --save   if successful, you may see:
+ &amp;quot;animate.css&amp;quot;: &amp;quot;^4.1.1&amp;quot;, in the package.json&amp;raquo; &amp;quot;dependencies&amp;quot;
+ note: may it is not version 4.1.1    using animate in the Vue project
+ in main.js,  import it using import animated from &#39;animate.css&#39; using it by Vue.use(animated)      then you can use it">
     </head>
     <body class="
-    article-page 
+    article-page has-toc
 ">
     <script>
         (function() {
@@ -58,67 +55,22 @@ hugo -D serve --theme=[themeName]   view with a base URL">
 </script>
 <div class="container main-container flex 
     
-        on-phone--column extended
+        extended
     
 ">
     
-        <aside class="sidebar left-sidebar sticky">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
-
-    <header class="site-info">
-        
-            
-            <figure class="site-avatar">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/demo_huc1b4d4181654d2407f73156ad75de9ae_104224_300x0_resize_q75_box.jpg" width="300"
-                            height="385" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
-
-                
-            </figure>
-            
-        
-        <h1 class="site-name"><a href="/">Xueshan Chen</a></h1>
-        <h2 class="site-description">崭新万物正上升幻灭如明星，我却乌云遮目。</h2>
-    </header>
-
-    <ol class="menu" id="main-menu">
-        
-        
-
-        
-            <li id="dark-mode-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
+  <polyline points="15 6 9 12 15 18" />
 </svg>
 
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                <span>Dark Mode</span>
-            </li>
-        
-    </ol>
-</aside>
-
+                <span>Back</span>
+            </a>
+        </div>
     
 <main class="main full-width">
     <article class="main-article">
@@ -128,7 +80,7 @@ hugo -D serve --theme=[themeName]   view with a base URL">
     
 
     <h2 class="article-title">
-        <a href="/post/hugocmd/">Hugo Common Commands</a>
+        <a href="/post/vue-animate-css/">Vue with Animate.css set up</a>
     </h2>
 
     
@@ -146,7 +98,7 @@ hugo -D serve --theme=[themeName]   view with a base URL">
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jan 04, 2022</time>
+                <time class="article-time--published">Mar 06, 2022</time>
             </div>
         
 
@@ -171,54 +123,43 @@ hugo -D serve --theme=[themeName]   view with a base URL">
 </header>
 
     <section class="article-content">
-    <h1 id="create">Create</h1>
+    <h2 id="using-animatecss-in-vue-projects">Using Animate.css in Vue projects</h2>
+<h4 id="useful-links">Useful links:</h4>
+<p><a class="link" href="https://www.dowebok.com/demo/2014/98/"  target="_blank" rel="noopener"
+    >animate.css</a></p>
+<h2 id="process">Process</h2>
 <ul>
 <li>
-<p>create a new site</p>
-<pre tabindex="0"><code class="language-hugo" data-lang="hugo">hugo new site [siteName]
+<p>install animate.css using npm</p>
+<pre tabindex="0"><code class="language-command" data-lang="command">npm install animate.css --save
 </code></pre></li>
-</ul>
-<h1 id="add-blogs">Add Blogs</h1>
+<li>
+<p>if successful, you may see:</p>
+<p><code> &quot;animate.css&quot;: &quot;^4.1.1&quot;,</code> in the <code>package.json</code>&raquo; <code>&quot;dependencies&quot;</code></p>
 <ul>
-<li>
-<p>create a new blog</p>
-<pre tabindex="0"><code class="language-hugo" data-lang="hugo">hugo new [path/blogName.md]
-</code></pre><p>the new blog will locate in the <code>siteName/content/path</code>, and default with a header</p>
-</li>
-</ul>
-<h1 id="build">Build</h1>
-<ul>
-<li>
-<p>open the site in local</p>
-<pre tabindex="0"><code class="language-hugo" data-lang="hugo">hugo serve
-</code></pre><ul>
-<li>
-<p>view the draft</p>
-<pre tabindex="0"><code class="language-hugo" data-lang="hugo">hugo -D serve
-</code></pre></li>
-<li>
-<p>view the draft with a theme</p>
-<pre tabindex="0"><code class="language-hugo" data-lang="hugo">hugo -D serve --theme=[themeName]
-</code></pre></li>
-<li>
-<p>view with a base URL</p>
-<pre tabindex="0"><code class="language-hugoo" data-lang="hugoo">hugo -D server --baseUrl=&quot;http://baseURL.com/&quot;
-</code></pre></li>
+<li>note: may it is not version 4.1.1</li>
 </ul>
 </li>
 <li>
-<p>public</p>
+<p>using animate in the Vue project</p>
 <ul>
-<li>
-<p>all the content will be built in a <code>public</code> file</p>
-<pre tabindex="0"><code class="language-hugo" data-lang="hugo"> hugo --theme=theme --baseUrl=&quot;baseURL&quot; --buildDrafts
-</code></pre></li>
+<li>in <code>main.js</code>,
+<ul>
+<li>import it using <code>import animated from 'animate.css'</code></li>
+<li>using it by <code>Vue.use(animated)</code></li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
-<p>for example, this site will use:</p>
-<pre tabindex="0"><code class="language-hugo" data-lang="hugo">hugo --theme=hugo-theme-stack --baseUrl=&quot;https://chenxue3.github.io/&quot; --buildDrafts
-</code></pre></li>
+<p>then you can use it</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;animate__animated animate__fadeInDown&#34;</span> &gt; &lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><ul>
+<li>note: you have to add class <code>animate__animated </code></li>
+<li>note: then you need to add class <code>animate__X </code>, where X is based on the feature you want, reference to <a class="link" href="https://www.dowebok.com/demo/2014/98/"  target="_blank" rel="noopener"
+    >this link</a>, you can view different demo of animations.</li>
+</ul>
+</li>
 </ul>
 
 </section>
@@ -228,7 +169,9 @@ hugo -D serve --theme=[themeName]   view with a base URL">
     
     <section class="article-tags">
         
-            <a href="/tags/hugo/">hugo</a>
+            <a href="/tags/vue/">vue</a>
+        
+            <a href="/tags/css/">CSS</a>
         
     </section>
 
@@ -271,24 +214,24 @@ hugo -D serve --theme=[themeName]   view with a base URL">
                 
                     
 <article class="">
-    <a href="/post/hugoaddtags/">
+    <a href="/post/vue_electron_setup/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Add Tags for Hugo Articles</h2>
+            <h2 class="article-title">Set up an Electron Project with VUE</h2>
         </div>
     </a>
 </article>
                 
                     
 <article class="">
-    <a href="/post/public_folder/">
+    <a href="/post/vuenoresponse/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Hugo create the public folder but it have not rendered</h2>
+            <h2 class="article-title">No Response After Executing `vue iu`</h2>
         </div>
     </a>
 </article>
@@ -421,6 +364,37 @@ hugo -D serve --theme=[themeName]   view with a base URL">
             >
 
             </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#using-animatecss-in-vue-projects">Using Animate.css in Vue projects</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#process">Process</a></li>
+  </ul>
+</nav>
+                </div>
+            </section>
+        </aside>
     
 
         </div>
