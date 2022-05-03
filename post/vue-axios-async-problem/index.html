@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=''><title>Vue Axios Async Problem</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Background JavaScript (JS), is a single-threaded language. In order to use the CPU more efficiently, JS allows the next task to be executed while the previous one is not completed, in a way called ’asynchronous’.
+Issue Before understanding this feature of JS, I found a lot of problems. For example, the user was logged in and wanted to use the information returned by the login API to get the projects of the user, but the back-end reported an error that the parameter passed was empty.'><title>Vue Axios Async Problem</title>
 
 <link rel='canonical' href='https://chenxue3.github.io/post/vue-axios-async-problem/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Vue Axios Async Problem'>
-<meta property='og:description' content=''>
+<meta property='og:description' content='Background JavaScript (JS), is a single-threaded language. In order to use the CPU more efficiently, JS allows the next task to be executed while the previous one is not completed, in a way called ’asynchronous’.
+Issue Before understanding this feature of JS, I found a lot of problems. For example, the user was logged in and wanted to use the information returned by the login API to get the projects of the user, but the back-end reported an error that the parameter passed was empty.'>
 <meta property='og:url' content='https://chenxue3.github.io/post/vue-axios-async-problem/'>
 <meta property='og:site_name' content='Xueshan Chen'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2022-03-05T16:06:30&#43;08:00'/><meta property='article:modified_time' content='2022-03-05T16:06:30&#43;08:00'/>
 <meta name="twitter:title" content="Vue Axios Async Problem">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Background JavaScript (JS), is a single-threaded language. In order to use the CPU more efficiently, JS allows the next task to be executed while the previous one is not completed, in a way called ’asynchronous’.
+Issue Before understanding this feature of JS, I found a lot of problems. For example, the user was logged in and wanted to use the information returned by the login API to get the projects of the user, but the back-end reported an error that the parameter passed was empty.">
     </head>
     <body class="
-    article-page 
+    article-page has-toc
 ">
     <script>
         (function() {
@@ -40,67 +43,22 @@
 </script>
 <div class="container main-container flex 
     
-        on-phone--column extended
+        extended
     
 ">
     
-        <aside class="sidebar left-sidebar sticky">
-    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
-        <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-        </span>
-    </button>
-
-    <header class="site-info">
-        
-            
-            <figure class="site-avatar">
-                
-                    
-                    
-                    
-                        
-                        <img src="/img/demo_huc1b4d4181654d2407f73156ad75de9ae_104224_300x0_resize_q75_box.jpg" width="300"
-                            height="385" class="site-logo" loading="lazy" alt="Avatar">
-                    
-                
-
-                
-            </figure>
-            
-        
-        <h1 class="site-name"><a href="/">Xueshan Chen</a></h1>
-        <h2 class="site-description">崭新万物正上升幻灭如明星，我却乌云遮目。</h2>
-    </header>
-
-    <ol class="menu" id="main-menu">
-        
-        
-
-        
-            <li id="dark-mode-toggle">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <div id="article-toolbar">
+            <a href="/" class="back-home">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="8" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
+  <polyline points="15 6 9 12 15 18" />
 </svg>
 
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="16" cy="12" r="2" />
-  <rect x="2" y="6" width="20" height="12" rx="6" />
-</svg>
-
-
-
-                <span>Dark Mode</span>
-            </li>
-        
-    </ol>
-</aside>
-
+                <span>Back</span>
+            </a>
+        </div>
     
 <main class="main full-width">
     <article class="main-article">
@@ -143,7 +101,7 @@
 
 
                 <time class="article-time--reading">
-                    0 minute read
+                    2 minute read
                 </time>
             </div>
         
@@ -153,7 +111,34 @@
 </header>
 
     <section class="article-content">
-    
+    <h2 id="background">Background</h2>
+<p>JavaScript (JS), is a single-threaded language. In order to use the CPU more efficiently, JS allows the next task to be executed while the previous one is not completed, in a way called ’asynchronous’.</p>
+<h2 id="issue">Issue</h2>
+<p>Before understanding this feature of JS, I found a lot of problems. For example, the user was logged in and wanted to use the information returned by the login API to get the projects of the user, but the back-end reported an error that the parameter passed was empty. After testing on both the back-end and front-end, I eventually found out that it was the default way of accessing the API using AJAX, which is asynchronous. That is, the user login interface had not actually returned the data, but the request for the projects had already been sent, and the parameter was empty at that point.</p>
+<h2 id="solution">Solution</h2>
+<p>To solve this problem, I took two approaches depending on the situation. One is to use Promise and call the next task in the callback function of the previous task. The other way is to use the new features in ES7, the keywords async and await.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//Promise and Callback
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">post</span>(<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">params</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Promise((<span style="color:#a6e22e">resolve</span>, <span style="color:#a6e22e">reject</span>) =&gt; {
+        <span style="color:#a6e22e">axios</span>.<span style="color:#a6e22e">post</span>(<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">qs</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">params</span>), ).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; {
+            <span style="color:#a6e22e">resolve</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">data</span>)
+        }).<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span> =&gt; {
+            <span style="color:#a6e22e">reject</span>(<span style="color:#a6e22e">err</span>.<span style="color:#a6e22e">data</span>)
+        })
+    });
+}
+
+
+<span style="color:#75715e">//`async` and `await`
+</span><span style="color:#75715e"></span> <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">getProjectInfo</span>() {
+      <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">getProjectByID</span>({ <span style="color:#a6e22e">projectID</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">projectID</span> }).<span style="color:#a6e22e">then</span>((<span style="color:#a6e22e">res</span>) =&gt; {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">res</span>);
+          <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>        )}
+      })
+ }
+
+</code></pre></div>
 </section>
 
 
@@ -317,6 +302,34 @@
             >
 
             </main>
+    
+        <aside class="sidebar right-sidebar sticky">
+            <section class="widget archives">
+                <div class="widget-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+                </div>
+                <h2 class="widget-title section-title">Table of contents</h2>
+                
+                <div class="widget--toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#issue">Issue</a></li>
+    <li><a href="#solution">Solution</a></li>
+  </ul>
+</nav>
+                </div>
+            </section>
+        </aside>
     
 
         </div>

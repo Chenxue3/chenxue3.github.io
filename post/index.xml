@@ -6,7 +6,35 @@
     <description>Recent content in Posts on Xueshan Chen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Mar 2022 15:05:51 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Mar 2022 11:35:35 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VUE Components Communication</title>
+      <link>https://chenxue3.github.io/post/vuex/</link>
+      <pubDate>Thu, 24 Mar 2022 11:35:35 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/vuex/</guid>
+      <description>Issues In the front-end, we use Vue, a framework that features a page divided into different components. One component can contain another component, and the relationship between these two components is that of parent and child. Native Vue provides communication between such components, but it is difficult for two components that are not related and need to interact with a large amount of information.
+Event Bus To solve this problem, I initially tried to use the creation of intermediate components.</description>
+    </item>
+    
+    <item>
+      <title>DisabledCheckboxCanNotUseClickEvent</title>
+      <link>https://chenxue3.github.io/post/disabledcheckboxcannotuseclickevent/</link>
+      <pubDate>Fri, 18 Mar 2022 19:49:46 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/disabledcheckboxcannotuseclickevent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue生命周期函数的使用</title>
+      <link>https://chenxue3.github.io/post/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Tue, 08 Mar 2022 21:48:37 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Scrol Back to Top</title>
       <link>https://chenxue3.github.io/post/scrol-back-to-top/</link>
@@ -36,16 +64,18 @@ npm install animate.css --save   if successful, you may see:
       <pubDate>Sat, 05 Mar 2022 16:06:30 +0800</pubDate>
       
       <guid>https://chenxue3.github.io/post/vue-axios-async-problem/</guid>
-      <description></description>
+      <description>Background JavaScript (JS), is a single-threaded language. In order to use the CPU more efficiently, JS allows the next task to be executed while the previous one is not completed, in a way called ’asynchronous’.
+Issue Before understanding this feature of JS, I found a lot of problems. For example, the user was logged in and wanted to use the information returned by the login API to get the projects of the user, but the back-end reported an error that the parameter passed was empty.</description>
     </item>
     
     <item>
-      <title>Element Ui Submenu Fix Open All</title>
+      <title>Element UI</title>
       <link>https://chenxue3.github.io/post/element-ui-submenu-fix-open-all/</link>
       <pubDate>Sat, 05 Mar 2022 14:03:11 +0800</pubDate>
       
       <guid>https://chenxue3.github.io/post/element-ui-submenu-fix-open-all/</guid>
-      <description> </description>
+      <description>Element-UI Related As previously described, we used Element-UI as the component library for the front-end in this project. While component libraries offer convenience, they also have some limitations and problems.\
+Version For example, the versioning of Element-UI is an issue. There are two versions of Element-UI, the native Element-UI and Element-Plus. there is not much difference between the two, in terms of style Element-Plus has more compatibility, but in terms of stability this new release is not as good as Element-UI.</description>
     </item>
     
     <item>
@@ -88,6 +118,17 @@ hugo new [path/blogName.md] the new blog will locate in the siteName/content/pat
 hugo serve   view the draft
 hugo -D serve   view the draft with a theme
 hugo -D serve --theme=[themeName]   view with a base URL</description>
+    </item>
+    
+    <item>
+      <title>jest</title>
+      <link>https://chenxue3.github.io/post/jest/</link>
+      <pubDate>Tue, 04 Jan 2022 11:07:35 +0800</pubDate>
+      
+      <guid>https://chenxue3.github.io/post/jest/</guid>
+      <description>Config   When I follow this introduction to set up the Jest, there is some errors after running npm run test.
+Test suite failed to run Jest worker encountered 4 child process exceptions, exceeding retry limit at ChildProcessWorker.initialize (node_modules/jest-runner/node_modules/jest-worker/build/workers/ChildProcessWorker.js:185:21)  I searched online but I can not find the reason    Promise Test   add return
+import {getUserInfo} from &amp;#34;../../src/api/user&amp;#34; test(&amp;#39;get user by email&amp;#39;, ()=&amp;gt;{ return getUserInfo({email:&amp;#34;1434678586@qq.</description>
     </item>
     
     <item>

@@ -6,7 +6,95 @@
         <description>Recent content on Xueshan Chen</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 06 Mar 2022 15:05:51 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Mar 2022 11:35:35 +0800</lastBuildDate><atom:link href="https://chenxue3.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VUE Components Communication</title>
+        <link>https://chenxue3.github.io/post/vuex/</link>
+        <pubDate>Thu, 24 Mar 2022 11:35:35 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/vuex/</guid>
+        <description>&lt;h2 id=&#34;issues&#34;&gt;Issues&lt;/h2&gt;
+&lt;p&gt;In the front-end, we use Vue, a framework that features a page divided into different components. One component can contain another component, and the relationship between these two components is that of parent and child. Native Vue provides communication between such components, but it is difficult for two components that are not related and need to interact with a large amount of information.&lt;/p&gt;
+&lt;h2 id=&#34;event-bus&#34;&gt;Event Bus&lt;/h2&gt;
+&lt;p&gt;To solve this problem, I initially tried to use the creation of intermediate components. For example, creating a middleware called &lt;code&gt;eventBus.js&lt;/code&gt;, mounting an instance of Vue in this file, and then introducing this file in each of the two components that need to communicate would enable the information to be interacted with.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//eventBus.js
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//this is an event bus, communicate the comoponents without inheriance
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;vue&amp;#34;&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//component 1
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;eventBus&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;$emit&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;functionName&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;info&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-vue&#34; data-lang=&#34;vue&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//component 2
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;eventBus&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;$on&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;functionName&amp;#34;&lt;/span&gt;, (&lt;span style=&#34;color:#a6e22e&#34;&gt;arg&lt;/span&gt;) =&amp;gt; {
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;arg&lt;/span&gt;)
+&lt;span style=&#34;color:#75715e&#34;&gt;//arg == component1.info
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    });
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This method solves the problem of communication between components directly. However, after connecting to the backend, I found that if I sent a request to the backend in the callback function of this function, the backend would receive different requests from multiple pages at the same time.&lt;/p&gt;
+&lt;h2 id=&#34;vuex&#34;&gt;Vuex&lt;/h2&gt;
+&lt;p&gt;To solve this problem, I looked into the documentation and found that Vue officially provides a file storage method called &lt;a class=&#34;link&#34; href=&#34;https://vuex.vuejs.org/zh/guide/#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84-store&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Vuex&lt;/a&gt;, which allows any component to store data in a global &amp;ldquo;storage tree&amp;rdquo; and access it at any time.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;install&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;npm install vuex@3 --save
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;create the storage tree&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//store.js
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vuex&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;vuex&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;vue&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;Vuex&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;store&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vuex&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;Store&lt;/span&gt;({
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;state&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;projectID&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//the data
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  },
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;mutations&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {&lt;span style=&#34;color:#75715e&#34;&gt;//funcitons
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;setProjectID&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;state&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;projectID&lt;/span&gt;) {
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;state&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;projectID&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;projectID&lt;/span&gt;
+    }
+  }
+})
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;included it in the &lt;code&gt;main.js&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; {&lt;span style=&#34;color:#a6e22e&#34;&gt;store&lt;/span&gt;} &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;./store&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;({
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;store&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;store&lt;/span&gt;,
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;() {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; {
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;Bus&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Vue&lt;/span&gt;(),
+    }
+  },
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;render&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt; =&amp;gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;h&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;App&lt;/span&gt;),
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;router&lt;/span&gt;,
+}).&lt;span style=&#34;color:#a6e22e&#34;&gt;$mount&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#app&amp;#39;&lt;/span&gt;)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;modify the data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;$store&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;commit&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;setProjectID&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;projectID&lt;/span&gt;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>DisabledCheckboxCanNotUseClickEvent</title>
+        <link>https://chenxue3.github.io/post/disabledcheckboxcannotuseclickevent/</link>
+        <pubDate>Fri, 18 Mar 2022 19:49:46 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/disabledcheckboxcannotuseclickevent/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Vue生命周期函数的使用</title>
+        <link>https://chenxue3.github.io/post/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+        <pubDate>Tue, 08 Mar 2022 21:48:37 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Scrol Back to Top</title>
         <link>https://chenxue3.github.io/post/scrol-back-to-top/</link>
         <pubDate>Sun, 06 Mar 2022 15:05:51 +0800</pubDate>
@@ -66,16 +154,51 @@
         <pubDate>Sat, 05 Mar 2022 16:06:30 +0800</pubDate>
         
         <guid>https://chenxue3.github.io/post/vue-axios-async-problem/</guid>
-        <description></description>
+        <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
+&lt;p&gt;JavaScript (JS), is a single-threaded language. In order to use the CPU more efficiently, JS allows the next task to be executed while the previous one is not completed, in a way called ’asynchronous’.&lt;/p&gt;
+&lt;h2 id=&#34;issue&#34;&gt;Issue&lt;/h2&gt;
+&lt;p&gt;Before understanding this feature of JS, I found a lot of problems. For example, the user was logged in and wanted to use the information returned by the login API to get the projects of the user, but the back-end reported an error that the parameter passed was empty. After testing on both the back-end and front-end, I eventually found out that it was the default way of accessing the API using AJAX, which is asynchronous. That is, the user login interface had not actually returned the data, but the request for the projects had already been sent, and the parameter was empty at that point.&lt;/p&gt;
+&lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
+&lt;p&gt;To solve this problem, I took two approaches depending on the situation. One is to use Promise and call the next task in the callback function of the previous task. The other way is to use the new features in ES7, the keywords async and await.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//Promise and Callback
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;post&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;) {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Promise((&lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;) =&amp;gt; {
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;axios&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;post&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;url&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;qs&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;stringify&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;), ).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt; =&amp;gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;resolve&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;)
+        }).&lt;span style=&#34;color:#66d9ef&#34;&gt;catch&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt; =&amp;gt; {
+            &lt;span style=&#34;color:#a6e22e&#34;&gt;reject&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;err&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;)
+        })
+    });
+}
+
+
+&lt;span style=&#34;color:#75715e&#34;&gt;//`async` and `await`
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getProjectInfo&lt;/span&gt;() {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getProjectByID&lt;/span&gt;({ &lt;span style=&#34;color:#a6e22e&#34;&gt;projectID&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;projectID&lt;/span&gt; }).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;) =&amp;gt; {
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;);
+          &lt;span style=&#34;color:#75715e&#34;&gt;//...
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;        )}
+      })
+ }
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
-        <title>Element Ui Submenu Fix Open All</title>
+        <title>Element UI</title>
         <link>https://chenxue3.github.io/post/element-ui-submenu-fix-open-all/</link>
         <pubDate>Sat, 05 Mar 2022 14:03:11 +0800</pubDate>
         
         <guid>https://chenxue3.github.io/post/element-ui-submenu-fix-open-all/</guid>
-        <description>&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
-</description>
+        <description>&lt;h2 id=&#34;element-ui-related&#34;&gt;Element-UI Related&lt;/h2&gt;
+&lt;p&gt;As previously described, we used Element-UI as the component library for the front-end in this project. While component libraries offer convenience, they also have some limitations and problems.\&lt;/p&gt;
+&lt;h3 id=&#34;version&#34;&gt;Version&lt;/h3&gt;
+&lt;p&gt;For example, the versioning of Element-UI is an issue. There are two versions of Element-UI, the native Element-UI and Element-Plus. there is not much difference between the two, in terms of style Element-Plus has more compatibility, but in terms of stability this new release is not as good as Element-UI. therefore, when creating the project at the beginning, I I chose Element-UI because it is compatible with the Vue 2.0 version we are using. However, one of the team members was using Vue 3.0 and therefore Element-Plus, which led to a lot of conflicts when we tried to merge our branches.&lt;/p&gt;
+&lt;h3 id=&#34;style&#34;&gt;Style&lt;/h3&gt;
+&lt;p&gt;There is also the challenge of modifying the style of these provided components. This is because these components are highly encapsulated and do not provide much of an interface for users to modify in order to maintain consistency of style. As an example, when trying to change the background colour of some components, it was found that modifying the CSS statement directly did not work and have to be use the keyword &lt;code&gt;!important&lt;/code&gt;. Another example is when using the checkBox component, where the default size does not meet the requirements. However, the size of this component is fixed according to the size of the window and changing its size directly does not work. The final solution was to use CSS statements to scale it up.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;background-color&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; #f5f5f5 &lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;important&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;transform&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;scale&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;1&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
         </item>
         <item>
         <title>如果文字过长，点击显示更多文字，再次点击收起</title>
@@ -199,6 +322,42 @@ yarn global add @vue/cli
 &lt;p&gt;for example, this site will use:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-hugo&#34; data-lang=&#34;hugo&#34;&gt;hugo --theme=hugo-theme-stack --baseUrl=&amp;quot;https://chenxue3.github.io/&amp;quot; --buildDrafts
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>jest</title>
+        <link>https://chenxue3.github.io/post/jest/</link>
+        <pubDate>Tue, 04 Jan 2022 11:07:35 +0800</pubDate>
+        
+        <guid>https://chenxue3.github.io/post/jest/</guid>
+        <description>&lt;h2 id=&#34;config&#34;&gt;Config&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;When I follow this &lt;a class=&#34;link&#34; href=&#34;https://v1.test-utils.vuejs.org/zh/installation/testing-single-file-components-with-jest.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;introduction&lt;/a&gt; to set up the Jest, there is some errors after running &lt;code&gt;npm run test&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt; Test suite failed to run
+
+    Jest worker encountered &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; child process exceptions, exceeding retry limit
+
+      at ChildProcessWorker.initialize &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;node_modules/jest-runner/node_modules/jest-worker/build/workers/ChildProcessWorker.js:185:21&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;I searched online but I can not find the reason&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;promise-test&#34;&gt;Promise Test&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;add return&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; {&lt;span style=&#34;color:#a6e22e&#34;&gt;getUserInfo&lt;/span&gt;} &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;../../src/api/user&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#a6e22e&#34;&gt;test&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;get user by email&amp;#39;&lt;/span&gt;, ()=&amp;gt;{
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getUserInfo&lt;/span&gt;({&lt;span style=&#34;color:#a6e22e&#34;&gt;email&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1434678586@qq.com&amp;#34;&lt;/span&gt;}).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;)=&amp;gt;{
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;expect&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;res&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;msg&lt;/span&gt;).&lt;span style=&#34;color:#a6e22e&#34;&gt;toBe&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;SUCCESS&amp;#39;&lt;/span&gt;)
+    })
+})
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         </item>
