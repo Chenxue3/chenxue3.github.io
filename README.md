@@ -1,9 +1,28 @@
-# Build and Deploy an Amazing 3D Developer Portfolio in React with Three.js
+# chenxue3.github.io
+This repository contains the source code for my personal portfolio website, built with React and Three.js, and hosted using GitHub Pages.
 
-![3D Website](https://i.ibb.co/ryytGVx/Screenshot-2023-11-25-at-11-28-11-AM.png)
+# About
+My portfolio site showcases my projects, skills, and experience in a modern, interactive way. It leverages Three.js for 3D graphics to create an engaging user experience while using React for component-based UI development.
 
-### [🌟 Become a top 1% Next.js 14 developer in only one course](https://jsmastery.pro/next14)
-### [🚀 Land your dream programming job in 6 months](https://jsmastery.pro/masterclass)
-### [📙 Free Three.js Cheatsheet](https://resource.jsmastery.pro/threejs-cheatsheet)
-### [🌐 Best Hosting for Your Websites](https://hostinger.com/javascript10)
+# Features
+Responsive and interactive UI built with React
+
+3D model rendering and animations powered by Three.js
+
+Showcases projects with detailed descriptions
+
+Contact information and social links
+
+Fast static site deployment via GitHub Pages
+
+# Technologies Used
+React
+
+Three.js
+
+JavaScript (ES6+)
+
+CSS Modules 
+
+GitHub Pages for hosting
 
