@@ -13,5 +13,5 @@ export default defineConfig({
     }),
   ],
   assetsInclude: ['**/*.glb'],
-  base: '/chenxue3.github.io/', // Base path for GitHub Pages
+  base: '/', // Base path for root domain deployment
 })
