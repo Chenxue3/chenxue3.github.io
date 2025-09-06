@@ -1,4 +1,6 @@
+import angular from './angular.svg'
 import css from './css.svg'
+import dotnet from './dotnet.svg'
 import express from './express.svg'
 import git from './git.svg'
 import github from './github.svg'
@@ -26,9 +28,12 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import swift from './swift.svg'
 
 export {
+    angular,
     css,
+    dotnet,
     express,
     git,
     github,
@@ -42,6 +47,7 @@ export {
     react,
     redux,
     sass,
+    swift,
     tailwindcss,
     typescript,
     linkedin,

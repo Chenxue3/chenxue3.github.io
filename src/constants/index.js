@@ -1,8 +1,10 @@
 import { meta, shopify, starbucks, tesla, nuseum, hero, siesta, net, python, springboot, vue } from "../assets/images";
 import {
+    angular,
     car,
     contact,
     css,
+    dotnet,
     estate,
     express,
     git,
@@ -21,6 +23,7 @@ import {
     sass,
     snapgram,
     summiz,
+    swift,
     tailwindcss,
     threads,
     typescript
@@ -28,28 +31,13 @@ import {
 
 export const skills = [
     {
-        imageUrl: css,
-        name: "CSS",
+        imageUrl: react,
+        name: "React",
         type: "Frontend",
     },
     {
-        imageUrl: express,
-        name: "Express",
-        type: "Backend",
-    },
-    {
-        imageUrl: git,
-        name: "Git",
-        type: "Version Control",
-    },
-    {
-        imageUrl: github,
-        name: "GitHub",
-        type: "Version Control",
-    },
-    {
-        imageUrl: html,
-        name: "HTML",
+        imageUrl: vue,
+        name: "Vue.js",
         type: "Frontend",
     },
     {
@@ -58,28 +46,8 @@ export const skills = [
         type: "Frontend",
     },
     {
-        imageUrl: mongodb,
-        name: "MongoDB",
-        type: "Database",
-    },
-    {
-        imageUrl: mui,
-        name: "Material-UI",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nextjs,
-        name: "Next.js",
-        type: "Frontend",
-    },
-    {
-        imageUrl: nodejs,
-        name: "Node.js",
-        type: "Backend",
-    },
-    {
-        imageUrl: react,
-        name: "React",
+        imageUrl: typescript,
+        name: "TypeScript",
         type: "Frontend",
     },
     {
@@ -88,8 +56,13 @@ export const skills = [
         type: "Frontend",
     },
     {
-        imageUrl: typescript,
-        name: "TypeScript",
+        imageUrl: css,
+        name: "CSS",
+        type: "Frontend",
+    },
+    {
+        imageUrl: html,
+        name: "HTML",
         type: "Frontend",
     },
     {
@@ -103,59 +76,110 @@ export const skills = [
         type: "Backend",
     },
     {
-        imageUrl: vue,
-        name: "Vue",
+        imageUrl: nodejs,
+        name: "Node.js",
+        type: "Backend",
+    },
+    {
+        imageUrl: express,
+        name: "Express",
+        type: "Backend",
+    },
+    {
+        imageUrl: mongodb,
+        name: "MongoDB",
+        type: "Database",
+    },
+    {
+        imageUrl: git,
+        name: "Git",
+        type: "Version Control",
+    },
+    {
+        imageUrl: github,
+        name: "GitHub",
+        type: "Version Control",
+    },
+    {
+        imageUrl: javascript,
+        name: "Three.js",
+        type: "3D Graphics",
+    },
+    {
+        imageUrl: mui,
+        name: "Material-UI",
         type: "Frontend",
     },
     {
-        imageUrl: net,
-        name: "Net",
+        imageUrl: nextjs,
+        name: "Next.js",
+        type: "Frontend",
+    },
+    {
+        imageUrl: swift,
+        name: "Swift",
+        type: "Mobile Development",
+    },
+    {
+        imageUrl: angular,
+        name: "Angular",
+        type: "Frontend",
+    },
+    {
+        imageUrl: dotnet,
+        name: ".NET",
         type: "Backend",
     }
 ];
 
 export const experiences = [
     {
-        title: "Database Specialist Intern",
-        company_name: "NUSEUM (AI-driven Digital Museum)",
-        icon: nuseum,
+        title: "Software Developer Intern",
+        company_name: "Auckland Bioengineering Institute",
+        icon: hero,
         iconBg: "#accbe1",
+        date: "Jul 2025 – Current",
+        points: [
+            "Designed and implemented a data-driven 3D medical model visualization platform with JSON-based dynamic content loading.",
+            "Developed a reusable VTK 3D model loader based on Three.js to support further extension and scalability.",
+            "Utilised AI-assisted tools to accelerate feature iteration while maintaining accuracy through git version control and code review.",
+            "Built a responsive cross-platform UI using Vue framework with TailwindCSS, ensuring consistent user experience across all devices.",
+            "Established comprehensive project documentation using Sphinx and published through ReadTheDocs to support reproducibility and team onboarding.",
+            "Configured an automated CI/CD pipeline with GitHub Actions and GitHub Pages deployment, enhancing development efficiency and team collaboration.",
+            "Applied Agile practices through weekly meetings to share progress, adjust priorities, and track issues for better collaboration and responsiveness."
+        ],
+    },
+    {
+        title: "Database Specialist Intern",
+        company_name: "NUSEUM (AI-driven nutrition suggestions)",
+        icon: nuseum,
+        iconBg: "#fbc3bc",
         date: "Dec 2024 – Feb 2025",
         points: [
-            "At NUSEUM, I wasn't just organizing data — I was making sure an AI docent always had the right answers ready at its fingertips.",
-            "Wrote Python scripts to automate data collection and standardization, improving database integrity and accessibility.",
-            "Designed and optimized database structures to enhance system performance and scalability.",
-            "Collaborated with a cross-national team to synchronize database updates and maintain data consistency."
+            "Collaborated with a cross-national team to synchronize database updates, ensuring data consistency and efficient version control.",
+            "Structured and optimized data types to support AI model training, improving the quality and usability of training datasets.",
+            "Designed the database for progressive data input, enabling gradual expansion from simple to complex data while maintaining scalability and integrity.",
+            "Implemented best practices in database management to support collaborative AI development and streamline workflow."
         ],
     },
     {
         title: "Full-Stack Developer Intern",
         company_name: "JumBox",
         icon: hero,
-        iconBg: "#fbc3bc",
+        iconBg: "#b7e4c7",
         date: "Oct 2020 – Jun 2021",
         points: [
-            "Developed a mini-program for university Stress Relief Week using Vue.js (frontend) and Java Spring Boot (backend).",
-            "Implemented Canvas.js API features, resulting in over 3,000 concurrent users during event week.",
-            "Built RESTful APIs for CRUD operations and ensured high-quality releases through unit and system testing.",
-            "Coordinated closely with UI/UX designers and product teams in an Agile environment."
-        ],
-    },
-    {
-        title: "Motel Receptionist (Part-Time)",
-        company_name: "Siesta Motel",
-        icon: siesta,
-        iconBg: "#b7e4c7",
-        date: "Sep 2023 - Current",
-        points: [
-            "Managing daily operations, including check-ins, check-outs, and room assignments.",
-            "Providing exceptional customer service to guests, ensuring a comfortable and welcoming environment.",
-            "Working with Work and Income New Zealand to process government emergency accommodation claims."
+            "Developed reusable Vue.js components to enable global state management and streamline data communication across the application.",
+            "Built a QR code–based user sharing feature with posters generated by Canvas.js APIs, leading to 3,000+ users in a single day for a stress-relief application.",
+            "Designed responsive layouts to ensure seamless performance across devices.",
+            "Wrote and executed unit tests with JUnit to verify backend functionality and improve reliability.",
+            "Collaborated in an Agile environment using Jira for sprint planning, reporting to project supervisors, and coordinating with design and client teams for timely delivery.",
+            "Leveraged Git for version control and peer code reviews, ensuring high-quality iterative development."
         ],
     },
     {
         title: "Python Tutor (Volunteer)",
-        company_name: "Teach Girls Coding Program ",
+        company_name: "Teach Girls Coding Program",
         icon: hero,
         iconBg: "#b7e4c7",
         date: "Sep 2021 – Mar 2022",
@@ -189,33 +213,30 @@ export const projects = [
     {
         iconUrl: pricewise,
         theme: 'btn-back-red',
-        name: 'AI for Good Hackathon - InnoveLeaf',
-        description: 'Led a team at Google\'s "AI for Good" hackathon to design an AI-powered platform that generates personalized storybooks for individuals with autism. Focused on template design and frontend development, delivering a highly customizable and inclusive user experience. Ranked in the Top 10 finalists.',
-        link: 'https://github.com/LinjingSUN/InnovLeaf/tree/dev-front-end',
-        videoUrl: 'https://youtu.be/43oBTdXDoR0',
+        name: 'Beef Demand Insights',
+        description: 'Data-driven web application for analyzing beef market trends and demand patterns. Built with modern web technologies to provide real-time insights for agricultural stakeholders.',
+        link: 'https://sff-demo-zoea.vercel.app/',
     },
     {
         iconUrl: threads,
         theme: 'btn-back-green',
         name: 'GenGPT-X',
-        description: 'Developed a web application using Java, Spring Boot, JavaScript, Vue, and MySQL to address the lack of user-friendly Goal-Plan-Tree generators for agent research. Improved the generator structure and applied it to real-world scenarios, helping researchers simulate decision-making processes with significantly less coding effort.',
+        description: 'Web application using Java, Spring Boot, JavaScript, Vue, and MySQL to address the lack of user-friendly Goal-Plan-Tree generators for agent research. Improved the generator structure and applied it to real-world scenarios.',
         link: 'https://github.com/Chenxue3/gen-gpt-x',
         videoUrl: 'https://youtu.be/i_ZFhoxsFcM',
-    },
-    {
-        iconUrl: car,
-        theme: 'btn-back-blue',
-        name: 'Stress Relief Week Mini-Program',
-        description: 'As a full-stack development intern at a startup, developed a mental health awareness mini-program using Vue.js and Java Spring Boot. Created interactive personalized posters via Canvas.js API, leading to over 3,000 alumni engaging online simultaneously during the launch week.',
-        videoUrl: 'https://youtube.com/shorts/YnzerL91iBM?feature=share',
-        
     },
     {
         iconUrl: snapgram,
         theme: 'btn-back-pink',
         name: 'Speaking Events Daily',
-        description: 'The project fetches and parses event information about "Speaking Group" events, which always full, then sends a daily email notification with the details to specified recipients. The script is fully automated and configured to run twice daily using GitHub Actions.',
+        description: 'Automated system that fetches and parses event information about "Speaking Group" events, then sends daily email notifications with details to specified recipients. Fully automated using GitHub Actions.',
         link: 'https://github.com/Chenxue3/speaking-events-daily',
     },
-    
+    {
+        iconUrl: car,
+        theme: 'btn-back-blue',
+        name: 'Pregnancy Care App',
+        description: 'Comprehensive pregnancy support application designed for Aotearoa New Zealand. Built with Nuxt.js, Vue.js, and Three.js to provide interactive 3D visualizations and trusted health information for expectant mothers and their whānau.',
+        link: 'https://virtualpregnancy.github.io/pregnancy-app/',
+    },
 ];

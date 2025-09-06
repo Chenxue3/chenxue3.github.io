@@ -29,19 +29,26 @@ const About = () => {
 
         <div className='mt-16 flex flex-wrap gap-12'>
           {skills.map((skill) => (
-            <div className='block-container w-20 h-20 group relative' key={skill.name}>
-              <div className='btn-back rounded-xl' />
-              <div className='btn-front rounded-xl flex justify-center items-center'>
-                <img
-                  src={skill.imageUrl}
-                  alt={skill.name}
-                  className='w-1/2 h-1/2 object-contain'
-                />
-                <div className='hidden group-hover:block absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-black text-white text-xs py-1 px-2 rounded whitespace-nowrap'>
-                  {skill.name}
+              <div className='flex flex-col items-center' key={skill.name}>
+                <div className='block-container w-20 h-20'>
+                  <div className='btn-back rounded-xl' />
+                  <div className='btn-front rounded-xl flex justify-center items-center'>
+                    <img
+                      src={skill.imageUrl}
+                      alt={skill.name}
+                      className='w-1/2 h-1/2 object-contain'
+                    />
+                  </div>
+                </div>
+                <div className='mt-3 text-center'>
+                  <div className='text-sm font-semibold text-slate-700'>
+                    {skill.name}
+                  </div>
+                  <div className='text-xs text-slate-500 mt-1'>
+                    {skill.type}
+                  </div>
                 </div>
               </div>
-            </div>
           ))}
         </div>
       </div>
