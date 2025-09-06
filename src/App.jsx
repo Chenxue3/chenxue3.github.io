@@ -7,7 +7,7 @@ import { About, Contact, Home, Projects, PostsPage, PostDetail } from './pages';
 const App = () => {
   return (
     <main className="bg-slate-300/20 min-h-screen flex flex-col">
-      <Router basename="/chenxue3.github.io">
+      <Router basename="/">
         <Navbar />
         <div className="flex-grow">
           <Routes>
