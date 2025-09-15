@@ -218,6 +218,13 @@ export const projects = [
         link: 'https://sff-demo-zoea.vercel.app/',
     },
     {
+        iconUrl: pricewise,
+        theme: 'btn-back-blue',
+        name: 'PicBed: My Self Image Hosting Service',
+        description: 'Self-hosted image hosting service built with modern web technologies to provide a secure and reliable way to store and share images, using ASP.NET Core and SQLite',
+        link: 'https://picbed.onrender.com/',
+    },
+    {
         iconUrl: threads,
         theme: 'btn-back-green',
         name: 'GenGPT-X',
