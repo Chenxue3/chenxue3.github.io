@@ -45,7 +45,7 @@ const Projects = () => {
                   rel='noopener noreferrer'
                   className='font-semibold text-blue-600'
                 >
-                  Live Link
+                  Open Source Code
                 </Link>
 
                 <img
@@ -65,7 +65,7 @@ const Projects = () => {
                   rel='noopener noreferrer'
                   className='font-semibold text-blue-600'
                 >
-                  View The Demo 
+                  View The Demo Video
                   </Link>
                   <img
                     src={arrow}
@@ -73,6 +73,13 @@ const Projects = () => {
                     className='w-4 h-4 object-contain'
                   />
                 
+                </div>
+              )}
+              {project.demoUrl && (
+                <div className='mt-5 flex items-center gap-2 font-poppins'>
+                  <Link to={project.demoUrl} target='_blank' rel='noopener noreferrer' className='font-semibold text-blue-600'>
+                    Live Link
+                  </Link>
                 </div>
               )}
             </div>

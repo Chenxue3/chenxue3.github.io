@@ -215,14 +215,16 @@ export const projects = [
         theme: 'btn-back-red',
         name: 'Beef Demand Insights',
         description: 'Data-driven web application for analyzing beef market trends and demand patterns. Built with modern web technologies to provide real-time insights for agricultural stakeholders.',
-        link: 'https://sff-demo-zoea.vercel.app/',
+        link: 'https://github.com/Chenxue3/sff-demo',
+        demoUrl: 'https://sff-demo-zoea.vercel.app/',
     },
     {
         iconUrl: pricewise,
         theme: 'btn-back-blue',
         name: 'PicBed: My Self Image Hosting Service',
         description: 'Self-hosted image hosting service built with modern web technologies to provide a secure and reliable way to store and share images, using ASP.NET Core and SQLite',
-        link: 'https://picbed.onrender.com/',
+        link: 'https://github.com/Chenxue3/PicBed',
+        demoUrl: 'https://picbed.onrender.com/',
     },
     {
         iconUrl: threads,
@@ -244,6 +246,8 @@ export const projects = [
         theme: 'btn-back-blue',
         name: 'Pregnancy Care App',
         description: 'Comprehensive pregnancy support application designed for Aotearoa New Zealand. Built with Nuxt.js, Vue.js, and Three.js to provide interactive 3D visualizations and trusted health information for expectant mothers and their whānau.',
-        link: 'https://virtualpregnancy.github.io/pregnancy-app/',
+        demoUrl: 'https://virtualpregnancy.github.io/pregnancy-app/',
+        link: 'https://github.com/Chenxue3/pregnancy-app',
+
     },
 ];
